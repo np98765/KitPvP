@@ -1,0 +1,9 @@
+name: KitPvP
+main: com.lavacraftserver.KitPvP.Main
+version: 1.0
+authors: [np98765,njb_said]
+website: http://dev.bukkit.org/server-mods/kitpvp
+commands:
+  pvp:
+    description: Spawns PvP kits
+    usage: /<command> <kit>
