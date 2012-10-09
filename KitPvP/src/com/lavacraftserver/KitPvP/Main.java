@@ -16,6 +16,7 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		getServer().getPluginManager().registerEvents(new DeathEvent(this), this);
 		getCommand("pvp").setExecutor(new Kits(this));
 	}
 	
