@@ -7,8 +7,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -34,13 +32,7 @@ public class Main extends JavaPlugin {
 			return onlineplayers;
 		     }
 	
-  @EventHandler(priority=EventPriority.HIGH)
-  public void onEntityDeath(EntityDeathEvent event) { if ((event.getEntity() instanceof Player)) {
-      Player player = (Player)event.getEntity();
-      if ((player.hasPermission("kitpvp.extra.nodeathdrop")) && 
-        (!event.getDrops().isEmpty()))
-       event.getDrops().clear();
-    } }
+
   
   @EventHandler
   public void onKill(PlayerDeathEvent e) {
