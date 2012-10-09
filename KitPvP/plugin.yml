@@ -7,3 +7,10 @@ commands:
   pvp:
     description: Spawns PvP kits
     usage: /<command> <kit>
+  refill:
+    description: Fills inventory with mushroom soup
+    usage: /<command>
+    aliases: [soup,stew]
+  kits:
+    description: Lists all kits
+    usage: /<command>
