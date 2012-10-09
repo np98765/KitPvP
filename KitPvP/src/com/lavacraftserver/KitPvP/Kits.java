@@ -23,8 +23,8 @@ public class Kits implements CommandExecutor {
 
 	public static HashSet<Player> death = new HashSet<Player>();
 
-//	   public static void chatprefix(String text) {
-//		      p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + text);
+//	   public static void chatChatColor.YELLOW + prefix(String text) {
+//		      p.sendMessage(ChatColor.YELLOW + prefix + text);
 //		    }
 	   
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {	
@@ -32,7 +32,7 @@ public class Kits implements CommandExecutor {
 			String prefix = "[KitPvP] ";
 			
 			if (!(sender instanceof Player)) {
-				sender.sendMessage(prefix +  "Silly console! You cant do that.");
+				sender.sendMessage(ChatColor.YELLOW + prefix +  "Silly console! You cant do that.");
 				return true;
 			 } else {
 				 Player p = (Player)sender;
@@ -40,11 +40,11 @@ public class Kits implements CommandExecutor {
 				 if (p.hasPermission("kitpvp.kit." + className) || p.isOp()) {
 					 if ((plugin.getConfig().getBoolean("settings.once-per-life") == true) && !(death.contains(p)) || (plugin.getConfig().getBoolean("settings.once-per-life") == false)) {
 						 if (args.length > 1) {
-							 sender.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + ChatColor.DARK_RED + "Too many arguments!");
+							 sender.sendMessage(ChatColor.YELLOW + prefix + ChatColor.RED + "Too many arguments!");
 							 return true;
 						 }
 						 if (args.length < 1) {
-							 sender.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + ChatColor.DARK_RED + "Please specify a kit!");
+							 sender.sendMessage(ChatColor.YELLOW + prefix + ChatColor.RED + "Please specify a kit!");
 							 return true;
 						 } 
 						 if (args.length == 1) {
@@ -199,14 +199,14 @@ public class Kits implements CommandExecutor {
 									 death.add(p);
 								 }
 							 } else {
-								 p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + ChatColor.DARK_RED + "Please choose a valid kit!");
+								 p.sendMessage(ChatColor.YELLOW + prefix + ChatColor.RED + "Please choose a valid kit!");
 							 }
 						 }
 					 } else {
-						 p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + ChatColor.DARK_RED + "You may only use one kit per life!");
+						 p.sendMessage(ChatColor.YELLOW + prefix + ChatColor.RED + "You may only use one kit per life!");
 					 }
 				 } else {
-					 p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + prefix + ChatColor.DARK_RED + "You do not have permission to use this kit!");
+					 p.sendMessage(ChatColor.YELLOW + prefix + ChatColor.RED + "You do not have permission to use this kit!");
 				 }
 			}
 		}
