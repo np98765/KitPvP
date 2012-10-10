@@ -34,6 +34,30 @@ public class Main extends JavaPlugin {
 		     }
 	
 
+  public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    Player player = null;
+    if ((sender instanceof Player)) {
+      player = (Player)sender;
+    }
+    if (cmd.getName().equalsIgnoreCase("kitpvp")) {
+      if (player == null) {
+        sender.sendMessage("This command can only be run by a player.");
+      }
+      else if (args.length == 0) {
+        player.sendMessage(" ");
+        player.sendMessage(ChatColor.WHITE + ChatColor.BOLD + "------------" + ChatColor.BLUE + ChatColor.BOLD + "KitPVP " + ChatColor.AQUA + ChatColor.ITALIC + "Info" + ChatColor.WHITE + ChatColor.BOLD + "------------");
+        player.sendMessage(ChatColor.RED + "KitPVP v1.0 " + ChatColor.YELLOW + "Developed by " + ChatColor.GOLD + "njb_said" + ChatColor.YELLOW + " and " + ChatColor.GOLD + "np98765.");
+        player.sendMessage(ChatColor.GRAY + "To clear your kit type " + ChatColor.AQUA + "- /clear");
+        player.sendMessage(ChatColor.GRAY + "To refill your soup type " + ChatColor.AQUA + "- /refill " + ChatColor.GRAY + "or " + ChatColor.AQUA + "/soup");
+        player.sendMessage("  ");
+        player.sendMessage(ChatColor.DARK_GREEN + "Our Sponsers: TechGe3ks");
+        player.sendMessage(ChatColor.GREEN + "Want this plugin? " + ChatColor.DARK_AQUA + "http://dev.bukkit.org/server-mods/kitpvp/");
+        player.sendMessage("  ");
+      } else if (args.length == 1) {
+        player.sendMessage(ChatColor.RED + "Error: Too many arguments. Please use " + ChatColor.WHITE + "/kitpvp");
+      }
+    }
+// I think i forgot to add somethings like return false; and some } I just though id add this.
   
   @EventHandler
   public void onKill(PlayerDeathEvent e) {
