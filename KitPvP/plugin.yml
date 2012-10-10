@@ -5,12 +5,19 @@ authors: [np98765,njb_said]
 website: http://dev.bukkit.org/server-mods/kitpvp
 commands:
   pvp:
-    description: Spawns PvP kits
+    description: Spawns a kit as set in config.yml.
     usage: /<command> <kit>
   refill:
-    description: Fills inventory with mushroom soup
+    description: Fills inventory with mushroom soup.
     usage: /<command>
     aliases: [soup,stew]
   kits:
-    description: Lists all kits
+    description: Lists all kits.
+    usage: /<command>
+  clear:
+    description: Clears your current kit/inventory.
+    usage: /<command>
+    aliases: [ci,clearinventory,clearinv,newinv,clearkit]
+  kitpvp:
+    description: Basic plugin info.
     usage: /<command>
